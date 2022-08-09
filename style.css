@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+    background-color: #333;
+    color: #222;
+    margin: 0;
+}
+.container{
+    background-color: aliceblue;
+    transform-origin: top left;
+    transition: transform .5s linear;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 50px;
+    
+}
+
+.container.show-nav{
+    transform: rotate(-20deg);
+    transition: transform .4s ease-in;
+}
+
+.container.show-nav .circle{
+    transform: rotate(-50deg);
+    transition: transform .4s ease-in;
+}
+
+.circle-container{
+    position: fixed;
+    top: -100px;
+    left: -100px;
+   }
+
+   .circle{
+      background-color: brown;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      position: relative;
+      transition: transform .5s linear;
+      cursor: pointer;
+   }
+
+   .circle span{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-size: 26px;
+      height: 100px;
+      color:white;
+      
+   }
+
+.circle span:hover >i{
+    cursor: pointer;
+    
+}   
+    
+.circle span#open{
+    left: 60%;
+    top: 65%;
+    
+}
+
+.circle span#close{
+    top: 70%;
+    left: 45%;
+    transform: rotate(90deg);
+    transform-origin: top left;
+}
+
+.content img{
+    max-width: 100%;
+}
+
+.content{
+    max-width: 1000px;
+    margin: 50px auto;
+    line-height: 1.5;
+}
+
+.content p{
+    line-height: 1.5;
+    border:5px solid #222;
+    padding: 1.5rem; 
+    margin-top: 10px; 
+    background-color: rgb(211, 185, 150);
+}
+
+small{
+    color: blue;
+    font-size: larger;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+
+h1,h3{
+    margin: 2rem 0;
+}
+
+.container.show-nav + nav li{
+    transform: translateX(0);
+    transition: transform .4s ease-in;
+}
+
+nav{
+    position: fixed;
+    bottom:20px;
+    left: 0;
+    z-index: -1;
+}
+
+nav ul li{
+       padding: 20px;
+       color: aliceblue;
+       list-style: none;
+       transform: translateX(-100px);
+       transition: transform .5s ease-in;
+       transition-delay: .1s;
+}
+
+nav ul li i{
+      padding-right: 10px;
+}
+
+nav ul li + li{
+    margin-left: 20px;
+    transform: translateX(-150%);
+    transition-delay: .2s;
+}
+
+nav ul li + li +li{
+    margin-left: 30px;
+    transform: translateX(-200%);
+    transition-delay: .3s;
+}
